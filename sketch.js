@@ -18,7 +18,7 @@ function setup() {
   
   for (var i = 0; i < MAX_DROP_COUNT; i++) {
     let maxZoomLevel = ZOOM_LEVEL_COUNT - 1;
-    let zoomLevel = int(map(zoomMap(i), zoomMap(dropCount), 0, 0, maxZoomLevel));
+    let zoomLevel = int(map(i, dropCount, 0, 0, maxZoomLevel));
     let zoomPercentage = zoomLevel / maxZoomLevel;
     
     // let zoomPercentage = 1;
@@ -26,10 +26,6 @@ function setup() {
   }
   
   drops = shuffle(drops);
-}
-
-function zoomMap(value) {
-  return Math.pow(value, 1);
 }
 
 function setupControls() {
