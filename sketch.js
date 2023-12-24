@@ -14,7 +14,7 @@ let drops = [];
 function setup() {
   setupControls();
   
-  createCanvas(640, 360);
+  createCanvas(getResponsiveCanvasWidth(), getResponsiveCanvasHeight());
   
   for (var i = 0; i < MAX_DROP_COUNT; i++) {
     let maxZoomLevel = ZOOM_LEVEL_COUNT - 1;
@@ -75,4 +75,16 @@ function draw() {
     drops[i].fall(speedBoost, wind);
     drops[i].show();
   }
+}
+
+function windowResized() {
+  resizeCanvas(getResponsiveCanvasWidth(), getResponsiveCanvasHeight());
+}
+
+function getResponsiveCanvasWidth() {
+  return Math.min(windowWidth * 0.8, 640);
+}
+
+function getResponsiveCanvasHeight() {
+  return Math.min(windowHeight * 0.5, 480);
 }
