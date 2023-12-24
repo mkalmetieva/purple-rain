@@ -29,9 +29,15 @@ button {
 
 .controls {
   text-align: center;
-  line-height: 3em;
+}
+
+.sliders {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 label {
+  display: block;
   margin: 1em;
 }
