@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather">
   <link rel="stylesheet" type="text/css" href="./style.css">
 
 </head>
@@ -16,6 +17,29 @@
 <body>
   <script src="sketch.js"></script>
   <script src="drop.js"></script>
+
+  <h1>Purple Rain</h1>
+
+  <div class="controls">
+    <button>Start/Stop</button>
+
+    <div>
+      <label>
+        Speed
+        <input id="speedSlider" type="range" class="slider" />
+      </label>
+
+      <label>
+        Amount
+        <input id="amountSlider" type="range" class="slider" />
+      </label>
+
+      <label>
+        Wind
+        <input id="windSlider" type="range" class="slider" />
+      </label>
+    </div>
+  </div>
 </body>
 
 </html>

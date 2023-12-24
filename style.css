@@ -2,9 +2,24 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+
+  font-family: Merriweather;
 }
 
 canvas {
   display: block;
-  margin: 0;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.controls {
+  text-align: center;
+  line-height: 3em;
+}
+
+label {
+  margin: 1em;
 }

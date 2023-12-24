@@ -1,5 +1,6 @@
-const MAX_DROP_COUNT = 1500;
-const DEFAULT_DROP_COUNT = 900;
+const MAX_DROP_COUNT = 1000;
+const MIN_DROP_COUNT = 200;
+const DEFAULT_DROP_COUNT = 600;
 const ZOOM_LEVEL_COUNT = 5;
 
 let stopped = false;
@@ -32,22 +33,34 @@ function zoomMap(value) {
 }
 
 function setupControls() {
-  let stopButton = createButton('Run/Stop');
+
+  let stopButton = select('button');
   stopButton.mousePressed(() => {
     stopped = !stopped;
   });
-  
-  let speedBoostSlider = createSlider(0, 4, 0);
-  speedBoostSlider.changed(() => {
-    speedBoost = speedBoostSlider.value();
+
+  let speedSlider = select('#speedSlider');
+  speedSlider.attribute("min", 0);
+  speedSlider.attribute("max", 4);
+  speedSlider.value(0);
+  speedSlider.changed(() => {
+    speedBoost = speedSlider.value();
   });
   
-  let dropCountSlider = createSlider(300, MAX_DROP_COUNT, DEFAULT_DROP_COUNT, 100);
+  let dropCountSlider = select('#amountSlider');
+  dropCountSlider.attribute("min", MIN_DROP_COUNT);
+  dropCountSlider.attribute("max", MAX_DROP_COUNT);
+  dropCountSlider.value(DEFAULT_DROP_COUNT);
+  dropCountSlider.attribute("step", 100);
   dropCountSlider.changed(() => {
     dropCount = dropCountSlider.value();
   });
   
-  let windSlider = createSlider(-20, 20, 0, 2);
+  let windSlider = select('#windSlider');
+  windSlider.attribute("min", -20);
+  windSlider.attribute("max", 20);
+  windSlider.value(0);
+  windSlider.attribute("step", 2);
   windSlider.changed(() => {
     wind = windSlider.value();
   });
